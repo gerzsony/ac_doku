@@ -7,7 +7,7 @@ on:
       - master
       
   schedule:
-  - cron: "39 * * * 1-5" # See https://crontab.guru/#0_7,9,11_*_*_1,3
+  - cron: "45 * * * 1-5" # See https://crontab.guru/#0_7,9,11_*_*_1,3
 #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
 
 jobs:
