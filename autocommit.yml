@@ -7,18 +7,16 @@ on:
       - master
       
   schedule:
-  - cron: "25 * * * 1-5" # See https://crontab.guru/#0_7,9,11_*_*_1,3
+  - cron: "32 * * * 1-5" # See https://crontab.guru/#0_7,9,11_*_*_1,3
 #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
 
 jobs:
   auto_commit:
     runs-on: ubuntu-latest
     steps:
-      - env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: DEBUG 
         run: echo "::debug::Ref = ${{github.ref}}"
-      - uses: actions/checkout@v4     
+      - uses: actions/checkout@v3     
         with:
          persist-credentials: false
          fetch-depth: 0
@@ -50,7 +48,7 @@ jobs:
           git commit -m "${arr[$rand]}"
           
       - name: GitHub Push
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@v0.6.0
         with:
           directory: "."
           github_token: ${{ secrets.GITHUB_TOKEN }}
