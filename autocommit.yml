@@ -8,7 +8,6 @@ on:
       
   schedule:
   - cron: "45 * * * 1-5" # See https://crontab.guru/#0_7,9,11_*_*_1,3
-#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
 
 jobs:
   auto_commit:
@@ -32,20 +31,22 @@ jobs:
           git config --local user.name "gerzsony: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"
           git add -A
           
-          arr[0]="chore(bot): 😂 auto commit"
-          arr[1]="chore(bot): 😱 auto commit"
-          arr[2]="chore(bot): 👿 auto commit"
-          arr[3]="chore(bot): 💩 auto commit"
-          arr[4]="chore(bot): 🙏 auto commit"
-          arr[5]="chore(bot): 🙈 auto commit"
-          arr[6]="chore(bot): 🐐 auto commit"
-          arr[7]="chore(bot): 🤖 auto commit"
-          arr[8]="chore(bot): 🟩 auto commit"
-          arr[9]="chore(bot): 👻 auto commit"
+          arr[0]="Kyoko: 😂 auto commit"
+          arr[1]="Kyoko: 😱 auto commit"
+          arr[2]="Kyoko: 👿 auto commit"
+          arr[3]="Kyoko: 💩 auto commit"
+          arr[4]="Kyoko: 🙏 auto commit"
+          arr[5]="Kyoko: 🙈 auto commit"
+          arr[6]="Kyoko: 🐐 auto commit"
+          arr[7]="Kyoko: 🤖 auto commit"
+          arr[8]="Kyoko: 🟩 auto commit"
+          arr[9]="Kyoko: 👻 auto commit"
           
           rand=$[$RANDOM % ${#arr[@]}]
+
+          d=`date '+%Y-%m-%d %H:%M:%S'`
           
-          git commit -m "${arr[$rand]}"
+          git commit -m "${arr[$rand]} $d"
           
       - name: GitHub Push
         uses: ad-m/github-push-action@v0.6.0
