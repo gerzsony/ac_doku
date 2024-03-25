@@ -31,20 +31,21 @@ jobs:
           git config --local user.name "gerzsony"
           git add -A
           
-          arr[0]="Kiyoko(bot): 😂 auto commit"
-          arr[1]="Synthia(bot): 😱 auto commit"
-          arr[2]="Proxima(bot): 👿 auto commit"
-          arr[3]="Judith(bot): 💩 auto commit"
-          arr[4]="Gabriella(bot): 🙏 auto commit"
-          arr[5]="Kingaa(bot): 🙈 auto commit"
-          arr[6]="Hajnii(bot): 🐐 auto commit"
-          arr[7]="Naomi(bot): 🤖 auto commit"
-          arr[8]="Anne(bot): 🟩 auto commit"
-          arr[9]="Triangle(bot): 👻 auto commit"
+          arr[0]="Kiyoko: 😂 auto commit"
+          arr[1]="Synthia: 😱 auto commit"
+          arr[2]="Proxima: 👿 auto commit"
+          arr[3]="Judith: 💩 auto commit"
+          arr[4]="Gabriella: 🙏 auto commit"
+          arr[5]="Kingaa: 🙈 auto commit"
+          arr[6]="Hajnii: 🐐 auto commit"
+          arr[7]="Naomi: 🤖 auto commit"
+          arr[8]="Anne: 🟩 auto commit"
+          arr[9]="Triangle: 👻 auto commit"
           
           rand=$[$RANDOM % ${#arr[@]}]
+          d=`date '+%Y-%m-%d %H:%M'`
           
-          git commit -m "${arr[$rand]}"
+          git commit -m "${arr[$rand]} $d"
           
       - name: GitHub Push
         uses: ad-m/github-push-action@v0.6.0
