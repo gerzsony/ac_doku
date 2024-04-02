@@ -7,7 +7,7 @@ on:
       - master
       
   schedule:
-  - cron: "45 * * * 1-5" # See https://crontab.guru/#
+  - cron: "45 11,17 * * 1-5" # See https://crontab.guru/#
 
 jobs:
   auto_commit:
@@ -27,6 +27,9 @@ jobs:
           
       - name: Commit changes
         run: |
+          
+          curl https://www.apartmanszallo.hu/wp-cron.php?doing_wp_cron >/dev/null
+
           git config --local user.email "gerzsony@yahoo.com"
           git config --local user.name "gerzsony"
           git add -A
