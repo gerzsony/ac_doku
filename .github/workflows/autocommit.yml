@@ -28,7 +28,8 @@ jobs:
       - name: Commit changes
         run: |
           
-          curl https://www.apartmanszallo.hu/wp-cron.php?doing_wp_cron >/dev/null
+          curl https://www.apartmanszallo.hu/wp-cron.php?doing_wp_cron > /dev/null
+          curl http://www.sanyival.fejlessz.hu/wp-cron.php?doing_wp_cron  > /dev/null
 
           git config --local user.email "gerzsony@yahoo.com"
           git config --local user.name "gerzsony"
